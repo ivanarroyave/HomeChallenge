@@ -10,7 +10,7 @@ import java.util.Collections;
 import static com.paloit.utils.ContentType.APPLICATION_JSON;
 import static com.paloit.utils.Json.generateJson;
 import static com.paloit.utils.PetRequestBody.defaultPetModelRequestObject;
-import static com.paloit.utils.pet.PetResources.ADD_NEW_PET_TO_THE_STORE;
+import static com.paloit.utils.apiresources.PetResources.ADD_NEW_PET_TO_THE_STORE;
 
 public class AddNewPet implements Task {
     private PetModelRequest petModelRequest;

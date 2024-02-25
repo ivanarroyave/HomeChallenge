@@ -1,4 +1,4 @@
-package com.paloit.utils.pet;
+package com.paloit.utils.apiresources;
 
 import lombok.Getter;
 

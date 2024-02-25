@@ -12,7 +12,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.ensure.Ensure;
-import net.serenitybdd.screenplay.rest.questions.LastResponse;
 import net.serenitybdd.screenplay.rest.questions.ResponseConsequence;
 import org.apache.http.HttpStatus;
 
@@ -29,7 +28,7 @@ import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
 
 public class FindsPetsByStatus extends SetUp {
-    private List<String> tags = new ArrayList<>();
+    private final List<String> tags = new ArrayList<>();
     @Before
     public void setup() {
         setUp(ACTOR_NAME);

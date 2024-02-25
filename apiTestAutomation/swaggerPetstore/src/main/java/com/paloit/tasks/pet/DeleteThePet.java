@@ -7,7 +7,7 @@ import net.serenitybdd.screenplay.rest.interactions.Delete;
 import java.util.Collections;
 
 import static com.paloit.utils.ContentType.APPLICATION_JSON;
-import static com.paloit.utils.pet.PetResources.DELETE_RESOURCE;
+import static com.paloit.utils.apiresources.PetResources.DELETE_RESOURCE;
 
 public class DeleteThePet implements Task {
     private final String id;

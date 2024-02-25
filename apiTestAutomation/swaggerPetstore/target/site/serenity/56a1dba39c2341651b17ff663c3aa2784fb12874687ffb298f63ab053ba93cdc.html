@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <title>Update an existing pet by Id - Non-existing Id</title>
+    <title>Returns pet inventories by status.</title>
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
@@ -122,10 +122,10 @@
             <a href="index.html" class="breadcrumbs">Home</a>
 
  <!-- inflection.of(breadcrumb.displayName).asATitle()-->
-            > <a href="#">Pet</a>
+            > <a href="#">Store</a>
  <!-- inflection.of(breadcrumb.displayName).asATitle()-->
-            > <a href="#">Everything about updating process of Pets.</a>
-        > Update an existing pet by id - non-existing id
+            > <a href="#">Everything about searches in the store.</a>
+        > Returns pet inventories by status.
         </span>
         </div>
         <div class="rightbg"></div>
@@ -164,7 +164,7 @@
                                 <div>
                                     <h3 class="discreet-story-header">
                                         <i class="fs-2 bi bi-chat-left-quote title-icon"></i>
-                                        <span class="story-header-title">Everything About Updating Process Of Pets. </span>
+                                        <span class="story-header-title">Everything About Searches In The Store. </span>
                                     </h3>
 
                                 </div>
@@ -175,7 +175,7 @@
                                     <span class="badge example-tag tag-badge" style="background:default;">
                                     <i class="bi bi-tag-fill"></i>&nbsp;
                                         <a class="tagLink" style="background:default;"
-                                           href="2a5b6a7be0f08df02d8ab0b4d4c68648c2695c6c7ef0658c71de4d42b1415b18.html">Under 1 Second
+                                           href="6c5512236937b92cd7a296b24edb966c2bd94be46b8910f8b129a42d6150eb25.html">1 To 10 Seconds
                                               (Duration)
                                         </a>
                                 </span>
@@ -192,7 +192,7 @@
                             <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
                             <span class="test-case-title">
                                 <span class="success-color">
-                                    Update an existing pet by Id - Non-existing Id
+                                    Returns pet inventories by status.
                                         <span class="related-issue-title"></span>
                                 </span>
                             </span>
@@ -283,7 +283,7 @@
                             <a href="javaScript:void(0)" onClick="toggleDiv('stepSection0')"
                                style="display:block;">
                                 <span class="top-level-step">
-                                                Given a pet already exists in the system
+                                                When the employee does a general search
                                         </span>
                             </a>
                             <span class="evidence">
@@ -292,7 +292,7 @@
                     </td>
 
                     <td width="130"><span class="top-level-step">SUCCESS</span></td>
-                    <td width="100"><span class="top-level-step">043ms</span></td>
+                    <td width="100"><span class="top-level-step">2s 933ms</span></td>
                 </tr>
                     <tr>
                         <td colspan="5">
@@ -313,7 +313,7 @@
                             <a href="javaScript:void(0)" onClick="toggleDiv('stepSection0-0')"
                                style="display:block;">
                                 <span class="nested-step">
-                                                Iván add new pet
+                                                Iván get all the inventory
                                         </span>
                             </a>
                             <span class="evidence">
@@ -322,7 +322,7 @@
                     </td>
 
                     <td width="130"><span class="nested-step">SUCCESS</span></td>
-                    <td width="100"><span class="nested-step">039ms</span></td>
+                    <td width="100"><span class="nested-step">2s 634ms</span></td>
                 </tr>
                     <tr>
                         <td colspan="5">
@@ -343,7 +343,7 @@
                             <a href="javaScript:void(0)" onClick="toggleDiv('stepSection0-0-0')"
                                style="display:block;">
                                 <span class="nested-step">
-                                                Iván executes a POST on the resource /api/v3/pet
+                                                Iván executes a GET on the resource /api/v3/store/inventory
                                         </span>
                             </a>
                             <span class="evidence">
@@ -352,7 +352,7 @@
                     </td>
 
                     <td width="130"><span class="nested-step">SUCCESS</span></td>
-                    <td width="100"><span class="nested-step">032ms</span></td>
+                    <td width="100"><span class="nested-step">2s 525ms</span></td>
                 </tr>
                     <tr>
                         <td colspan="5">
@@ -369,7 +369,7 @@
                     <td class="step-description-column">
                         <div class="step-description">
                                 <span class="nested-group-step">
-                                                POST http://localhost:8080/api/v3/pet
+                                                GET http://localhost:8080/api/v3/store/inventory
                                         </span>
                             <span class="evidence">
                                         <span class="piece-of-evidence">
@@ -385,17 +385,15 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4>Response</h4>
-                                    <p>URL: http://localhost:8080/api/v3/pet</p>
+                                    <p>URL: http://localhost:8080/api/v3/store/inventory</p>
                                     <p>Status code: 200</p>
                                     <p>Content Type: application/json</p>
                                     <h4>Request Headers</h4>
                                     <pre>Accept=*/*<br>Content-Type=application/json</pre>
-                                    <h4>Content Body</h4>
-                                    <pre>{<br>    &quot;id&quot;: &quot;500548694&quot;,<br>    &quot;name&quot;: &quot;Lily&quot;,<br>    &quot;category&quot;: {<br>        &quot;id&quot;: 1,<br>        &quot;name&quot;: &quot;Dogs&quot;<br>    },<br>    &quot;photoUrls&quot;: [<br>        &quot;/pet/photo/profile.jpg&quot;<br>    ],<br>    &quot;tags&quot;: [<br>        {<br>            &quot;id&quot;: 1,<br>            &quot;name&quot;: &quot;Dog&quot;<br>        },<br>        {<br>            &quot;id&quot;: 2,<br>            &quot;name&quot;: &quot;Friendly&quot;<br>        }<br>    ],<br>    &quot;status&quot;: &quot;available&quot;<br>}</pre>
                                     <h4>Response Headers</h4>
-                                    <pre>Date: Sun, 25 Feb 2024 08:17:21 GMT<br>Access-Control-Allow-Origin: *<br>Access-Control-Allow-Methods: GET, POST, DELETE, PUT<br>Access-Control-Allow-Headers: Content-Type, api_key, Authorization<br>Access-Control-Expose-Headers: Content-Disposition<br>Content-Type: application/json<br>Content-Length: 182<br>Server: Jetty(9.4.9.v20180320)</pre>
+                                    <pre>Date: Sun, 25 Feb 2024 08:17:19 GMT<br>Access-Control-Allow-Origin: *<br>Access-Control-Allow-Methods: GET, POST, DELETE, PUT<br>Access-Control-Allow-Headers: Content-Type, api_key, Authorization<br>Access-Control-Expose-Headers: Content-Disposition<br>Content-Type: application/json<br>Content-Length: 43<br>Server: Jetty(9.4.9.v20180320)</pre>
                                 <h4>Response Body</h4>
-                                    <pre>{<br>    &quot;id&quot;: 500548694,<br>    &quot;category&quot;: {<br>        &quot;id&quot;: 1,<br>        &quot;name&quot;: &quot;Dogs&quot;<br>    },<br>    &quot;name&quot;: &quot;Lily&quot;,<br>    &quot;photoUrls&quot;: [<br>        &quot;/pet/photo/profile.jpg&quot;<br>    ],<br>    &quot;tags&quot;: [<br>        {<br>            &quot;id&quot;: 1,<br>            &quot;name&quot;: &quot;Dog&quot;<br>        },<br>        {<br>            &quot;id&quot;: 2,<br>            &quot;name&quot;: &quot;Friendly&quot;<br>        }<br>    ],<br>    &quot;status&quot;: &quot;available&quot;<br>}</pre>
+                                    <pre>{<br>    &quot;approved&quot;: 50,<br>    &quot;placed&quot;: 100,<br>    &quot;delivered&quot;: 50<br>}</pre>
                                     <h4>Response Cookies</h4>
                                     <pre></pre>
                             </div>
@@ -438,7 +436,7 @@
                             <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1')"
                                style="display:block;">
                                 <span class="top-level-step">
-                                                When the personal support change the name to "Lucky", and someone had deleted the record before update
+                                                Then he will see all totals are groped
                                         </span>
                             </a>
                             <span class="evidence">
@@ -447,7 +445,7 @@
                     </td>
 
                     <td width="130"><span class="top-level-step">SUCCESS</span></td>
-                    <td width="100"><span class="top-level-step">080ms</span></td>
+                    <td width="100"><span class="top-level-step">920ms</span></td>
                 </tr>
                     <tr>
                         <td colspan="5">
@@ -456,37 +454,7 @@
 
                     <td width="70" class="step-icon">
                         <a name="1-0"></a>
-                            <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1-0')"
-                               style="display:block">
-                                <i class="bi bi-caret-right-square imgstepSection1-0 success-icon"
-                                   style="margin-left: 40px; float:left; padding-right:5px"></i>
-                            </a>
-                    </td>
-
-                    <td class="step-description-column">
-                        <div class="step-description">
-                            <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1-0')"
-                               style="display:block;">
-                                <span class="nested-step">
-                                                Iván executes a DELETE on the resource /api/v3/pet/500548694
-                                        </span>
-                            </a>
-                            <span class="evidence">
-                                </span>
-                        </div>
-                    </td>
-
-                    <td width="130"><span class="nested-step">SUCCESS</span></td>
-                    <td width="100"><span class="nested-step">033ms</span></td>
-                </tr>
-                    <tr>
-                        <td colspan="5">
-                            <table id="stepSection1-0" class="step-table-nested" style="display:none;">
-                <tr class="test-SUCCESS">
-
-                    <td width="90" class="step-icon">
-                        <a name="1-0-0"></a>
-                            <span style="margin-left: 60px;"
+                            <span style="margin-left: 40px;"
                                   class="nested-group-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
                                 </span>
                     </td>
@@ -494,84 +462,21 @@
                     <td class="step-description-column">
                         <div class="step-description">
                                 <span class="nested-group-step">
-                                                DELETE http://localhost:8080/api/v3/pet/500548694
+                                                The HTTP/HTTPS status code should be 200
                                         </span>
                             <span class="evidence">
-                                        <span class="piece-of-evidence">
-                <span>
-                        <button type="button" class="btn btn-success btn-sm" data-toggle="collapse"
-                                data-target="#restModal-REST-7">
-                            REST Query
-                        </button>
-                    </span>
-                <!-- Modal -->
-                <div class="rest-query-details">
-                    <div class="collapse multi-collapse" id="restModal-REST-7">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4>Response</h4>
-                                    <p>URL: http://localhost:8080/api/v3/pet/500548694</p>
-                                    <p>Status code: 200</p>
-                                    <p>Content Type: application/json</p>
-                                    <h4>Request Headers</h4>
-                                    <pre>Accept=*/*<br>Content-Type=application/json</pre>
-                                    <h4>Response Headers</h4>
-                                    <pre>Date: Sun, 25 Feb 2024 08:17:21 GMT<br>Access-Control-Allow-Origin: *<br>Access-Control-Allow-Methods: GET, POST, DELETE, PUT<br>Access-Control-Allow-Headers: Content-Type, api_key, Authorization<br>Access-Control-Expose-Headers: Content-Disposition<br>Content-Type: application/json<br>Content-Length: 11<br>Server: Jetty(9.4.9.v20180320)</pre>
-                                <h4>Response Body</h4>
-                                    <pre>Pet deleted</pre>
-                                    <h4>Response Cookies</h4>
-                                    <pre></pre>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                                        </span>
                                 </span>
                         </div>
                     </td>
 
                     <td width="130"><span class="nested-group-step">SUCCESS</span></td>
-                    <td width="100"><span class="nested-group-step"></span></td>
+                    <td width="100"><span class="nested-group-step">025ms</span></td>
                 </tr>
-
-                            </table>
-                        </td>
-                    </tr>
                 <tr class="test-SUCCESS">
 
                     <td width="70" class="step-icon">
                         <a name="1-1"></a>
-                            <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1-1')"
-                               style="display:block">
-                                <i class="bi bi-caret-right-square imgstepSection1-1 success-icon"
-                                   style="margin-left: 40px; float:left; padding-right:5px"></i>
-                            </a>
-                    </td>
-
-                    <td class="step-description-column">
-                        <div class="step-description">
-                            <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1-1')"
-                               style="display:block;">
-                                <span class="nested-step">
-                                                Iván executes a PUT on the resource /api/v3/pet/
-                                        </span>
-                            </a>
-                            <span class="evidence">
-                                </span>
-                        </div>
-                    </td>
-
-                    <td width="130"><span class="nested-step">SUCCESS</span></td>
-                    <td width="100"><span class="nested-step">032ms</span></td>
-                </tr>
-                    <tr>
-                        <td colspan="5">
-                            <table id="stepSection1-1" class="step-table-nested" style="display:none;">
-                <tr class="test-SUCCESS">
-
-                    <td width="90" class="step-icon">
-                        <a name="1-1-0"></a>
-                            <span style="margin-left: 60px;"
+                            <span style="margin-left: 40px;"
                                   class="nested-group-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
                                 </span>
                     </td>
@@ -579,128 +484,59 @@
                     <td class="step-description-column">
                         <div class="step-description">
                                 <span class="nested-group-step">
-                                                PUT http://localhost:8080/api/v3/pet/
+                                                Then approved status should be not null
                                         </span>
                             <span class="evidence">
-                                        <span class="piece-of-evidence">
-                <span>
-                        <button type="button" class="btn btn-success btn-sm" data-toggle="collapse"
-                                data-target="#restModal-REST-9">
-                            REST Query
-                        </button>
-                    </span>
-                <!-- Modal -->
-                <div class="rest-query-details">
-                    <div class="collapse multi-collapse" id="restModal-REST-9">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4>Response</h4>
-                                    <p>URL: http://localhost:8080/api/v3/pet/</p>
-                                    <p>Status code: 404</p>
-                                    <p>Content Type: application/json</p>
-                                    <h4>Request Headers</h4>
-                                    <pre>Accept=*/*<br>Content-Type=application/json</pre>
-                                    <h4>Content Body</h4>
-                                    <pre>{<br>    &quot;id&quot;: &quot;500548694&quot;,<br>    &quot;name&quot;: &quot;Lucky&quot;,<br>    &quot;category&quot;: {<br>        &quot;id&quot;: 1,<br>        &quot;name&quot;: &quot;Dogs&quot;<br>    },<br>    &quot;photoUrls&quot;: [<br>        &quot;/pet/photo/profile.jpg&quot;<br>    ],<br>    &quot;tags&quot;: [<br>        {<br>            &quot;id&quot;: 1,<br>            &quot;name&quot;: &quot;Dog&quot;<br>        },<br>        {<br>            &quot;id&quot;: 2,<br>            &quot;name&quot;: &quot;Friendly&quot;<br>        }<br>    ],<br>    &quot;status&quot;: &quot;available&quot;<br>}</pre>
-                                    <h4>Response Headers</h4>
-                                    <pre>Date: Sun, 25 Feb 2024 08:17:21 GMT<br>Access-Control-Allow-Origin: *<br>Access-Control-Allow-Methods: GET, POST, DELETE, PUT<br>Access-Control-Allow-Headers: Content-Type, api_key, Authorization<br>Access-Control-Expose-Headers: Content-Disposition<br>Content-Type: application/json<br>Content-Length: 13<br>Server: Jetty(9.4.9.v20180320)</pre>
-                                <h4>Response Body</h4>
-                                    <pre>Pet not found</pre>
-                                    <h4>Response Cookies</h4>
-                                    <pre></pre>
-                            </div>
+                                </span>
                         </div>
-                    </div>
-                </div>
+                    </td>
+
+                    <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                    <td width="100"><span class="nested-group-step">004ms</span></td>
+                </tr>
+                <tr class="test-SUCCESS">
+
+                    <td width="70" class="step-icon">
+                        <a name="1-2"></a>
+                            <span style="margin-left: 40px;"
+                                  class="nested-group-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                    </td>
+
+                    <td class="step-description-column">
+                        <div class="step-description">
+                                <span class="nested-group-step">
+                                                Then placed status should be not null
                                         </span>
+                            <span class="evidence">
+                                </span>
+                        </div>
+                    </td>
+
+                    <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                    <td width="100"><span class="nested-group-step">001ms</span></td>
+                </tr>
+                <tr class="test-SUCCESS">
+
+                    <td width="70" class="step-icon">
+                        <a name="1-3"></a>
+                            <span style="margin-left: 40px;"
+                                  class="nested-group-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                    </td>
+
+                    <td class="step-description-column">
+                        <div class="step-description">
+                                <span class="nested-group-step">
+                                                Then delivered status should be not null
+                                        </span>
+                            <span class="evidence">
                                 </span>
                         </div>
                     </td>
 
                     <td width="130"><span class="nested-group-step">SUCCESS</span></td>
                     <td width="100"><span class="nested-group-step"></span></td>
-                </tr>
-
-                            </table>
-                        </td>
-                    </tr>
-
-                            </table>
-                        </td>
-                    </tr>
-                <tr class="test-SUCCESS">
-
-                    <td width="50" class="step-icon">
-                        <a name="2"></a>
-                            <a href="javaScript:void(0)" onClick="toggleDiv('stepSection2')"
-                               style="display:block">
-                                <i class="bi bi-caret-right-square imgstepSection2 success-icon"
-                                   style="margin-left: 20px; float:left; padding-right:5px"></i>
-                            </a>
-                    </td>
-
-                    <td class="step-description-column">
-                        <div class="step-description">
-                            <a href="javaScript:void(0)" onClick="toggleDiv('stepSection2')"
-                               style="display:block;">
-                                <span class="top-level-step">
-                                                Then the platform will indicate an alert related to pet not found
-                                        </span>
-                            </a>
-                            <span class="evidence">
-                                </span>
-                        </div>
-                    </td>
-
-                    <td width="130"><span class="top-level-step">SUCCESS</span></td>
-                    <td width="100"><span class="top-level-step">004ms</span></td>
-                </tr>
-                    <tr>
-                        <td colspan="5">
-                            <table id="stepSection2" class="step-table-nested" style="display:none;">
-                <tr class="test-SUCCESS">
-
-                    <td width="70" class="step-icon">
-                        <a name="2-0"></a>
-                            <span style="margin-left: 40px;"
-                                  class="nested-group-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
-                                </span>
-                    </td>
-
-                    <td class="step-description-column">
-                        <div class="step-description">
-                                <span class="nested-group-step">
-                                                The HTTP/HTTPS status code should be 404
-                                        </span>
-                            <span class="evidence">
-                                </span>
-                        </div>
-                    </td>
-
-                    <td width="130"><span class="nested-group-step">SUCCESS</span></td>
-                    <td width="100"><span class="nested-group-step">001ms</span></td>
-                </tr>
-                <tr class="test-SUCCESS">
-
-                    <td width="70" class="step-icon">
-                        <a name="2-1"></a>
-                            <span style="margin-left: 40px;"
-                                  class="nested-group-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
-                                </span>
-                    </td>
-
-                    <td class="step-description-column">
-                        <div class="step-description">
-                                <span class="nested-group-step">
-                                                The platform will not update the pet information because the pet was not found
-                                        </span>
-                            <span class="evidence">
-                                </span>
-                        </div>
-                    </td>
-
-                    <td width="130"><span class="nested-group-step">SUCCESS</span></td>
-                    <td width="100"><span class="nested-group-step">001ms</span></td>
                 </tr>
 
                             </table>
@@ -709,7 +545,7 @@
             <tr class="test-SUCCESS">
                     <td colspan="2"></td>
                 <td width="130"><span class="top-level-step"><em>SUCCESS</em></span></td>
-                <td width="100"><span class="top-level-step"><em>0.74s</em></span></td>
+                <td width="100"><span class="top-level-step"><em>5.32s</em></span></td>
             </tr>
 
         </table>

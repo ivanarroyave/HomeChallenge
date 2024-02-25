@@ -1,7 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="1" name="Everything about searching Pets." skipped="0" tests="6" time="1.59" timestamp="2024-02-25 01:37:43"><testcase name="Find pets by multiple tags."/><testcase name="Finds pets by existing status."/><testcase name="Find pets by tag."><failure message="The validation don't match. The results aren't related with all tags: sick - &#10;Expected: is &lt;true&gt;&#10;     but: was &lt;false&gt;" type="com.paloit.exceptions.DoNotMatch">The validation don't match. The results aren't related with all tags: sick - 
-Expected: is &lt;true&gt;
-     but: was &lt;false&gt;</failure><system-err>The validation don't match. The results aren't related with all tags: sick - 
-Expected: is &lt;true&gt;
-     but: was &lt;false&gt;&#13;
-com.paloit.stepdefinitions.pet.FindsPetsByStatus.heWillSeeAListOfPetsRelatedWithTheTag(FindsPetsByStatus.java:88)&#13;
-</system-err></testcase><testcase name="Finds pets by unexpected status."/></testsuite>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Everything about searching Pets." skipped="0" tests="6" time="1.68" timestamp="2024-02-25 03:17:20"><testcase name="Find pets by multiple tags."/><testcase name="Finds pets by existing status."/><testcase name="Find pets by tag."/><testcase name="Finds pets by unexpected status."/></testsuite>

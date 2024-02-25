@@ -8,8 +8,8 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberSerenityRunner.class)
 @CucumberOptions(
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        features = {"src/test/resources/features"},
-        glue = {"com.paloit.stepdefinitions"}
+        features = {"src/test/resources/features/pet"},
+        glue = {"com.paloit.stepdefinitions.pet"}
 )
 public class PetFeatureParallelExecutionLevel {
 }

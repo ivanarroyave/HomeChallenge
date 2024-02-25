@@ -9,7 +9,7 @@ import java.util.Collections;
 
 import static com.paloit.utils.ContentType.APPLICATION_JSON;
 import static com.paloit.utils.Json.generateJson;
-import static com.paloit.utils.pet.PetResources.UPDATE_RESOURCE;
+import static com.paloit.utils.apiresources.PetResources.UPDATE_RESOURCE;
 
 public class UpdateAnExistingPet implements Task {
     private final PetModelRequest petModelRequest;

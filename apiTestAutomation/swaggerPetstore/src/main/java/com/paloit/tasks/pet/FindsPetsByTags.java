@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.List;
 
 import static com.paloit.utils.ContentType.APPLICATION_JSON;
-import static com.paloit.utils.pet.PetResources.FIND_PETS_BY_TAGS;
+import static com.paloit.utils.apiresources.PetResources.FIND_PETS_BY_TAGS;
 
 public class FindsPetsByTags implements Task {
     private static final String TAGS = "tags";

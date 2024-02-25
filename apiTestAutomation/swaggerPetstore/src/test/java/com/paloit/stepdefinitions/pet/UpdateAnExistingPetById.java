@@ -24,8 +24,6 @@ import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
 
 public class UpdateAnExistingPetById extends SetUp {
-    private static final String RESOURCE = "/api/v3/pet";
-    private static final String DELETE_RESOURCE = "/api/v3/pet/";
     private PetModelRequest petModelRequest;
 
     @Before
