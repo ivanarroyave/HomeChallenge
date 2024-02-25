@@ -87,7 +87,8 @@ jobs:
       run: |
         cd apiPerformanceImplementation/swaggerPetstore/pet
         sudo chmod -R 777 $(pwd)
-        k6 run findPetByStatus.js > findPetByStatusResult.txt
+        k6 run FindPetByStatus.js > FindPetByStatusResult.txt
+        k6 run AddNewPetToTheStore.js > AddNewPetToTheStoreResult.txt
 
     - name: Recoger Evidencias de Pruebas
       if: always()
@@ -95,4 +96,5 @@ jobs:
       with:
         name: performance-test-with-k6-reports
         path: |
-          apiPerformanceImplementation/swaggerPetstore/pet/findPetByStatusResult.txt
+          apiPerformanceImplementation/swaggerPetstore/pet/FindPetByStatusResult.txt
+          apiPerformanceImplementation/swaggerPetstore/pet/AddNewPetToTheStoreResult.txt
