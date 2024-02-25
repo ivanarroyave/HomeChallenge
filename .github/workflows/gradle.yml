@@ -22,6 +22,8 @@ jobs:
       run: |
         pwd
         cd apiTestAutomation/swaggerPetstore
+        pwd
+        sudo chmod -R 777 $(pwd)
         ./gradlew cleanTest test
 
     - name: Caché de dependencias de Gradle
