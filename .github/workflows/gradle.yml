@@ -1,4 +1,4 @@
-name: Java CI con Gradle
+name: Java CI con Gradle y Docker
 
 on:
   push:
@@ -7,17 +7,9 @@ on:
     branches: [ trunk ]
 
 jobs:
-  setup-docker:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Pull Docker Image
-      run: |
-        docker pull swaggerapi/petstore3:unstable
-        docker run --name swaggerapi-petstore3 -d -p 8080:8080 swaggerapi/petstore3:unstable
-
   build-and-test:
-    needs: setup-docker
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v3
 
@@ -27,13 +19,18 @@ jobs:
         java-version: '17'
         distribution: 'adopt'
 
-    - name: Ejecutar pruebas con Gradle
+    - name: Pull Docker Image
       run: |
-        cd apiTestAutomation/swaggerPetstore
-        sudo chmod -R 777 $(pwd)
-        ./gradlew clean build -x test
-        ./gradlew test --tests *runners* aggregate -i
-        
+        docker pull swaggerapi/petstore3:unstable
+
+    - name: Iniciar Contenedor Docker
+      run: |
+        docker run --name swaggerapi-petstore3 -d -p 8080:8080 swaggerapi/petstore3:unstable
+
+    - name: Esperar a que el servicio esté disponible
+      run: |
+        wget --waitretry=5 --retry-connrefused -T 15 -O- http://localhost:8080/v2/swagger.json
+
     - name: Caché de dependencias de Gradle
       uses: actions/cache@v3
       with:
@@ -43,6 +40,12 @@ jobs:
         key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
         restore-keys: |
           ${{ runner.os }}-gradle-
+
+    - name: Ejecutar pruebas con Gradle
+      run: |
+        cd apiTestAutomation/swaggerPetstore
+        ./gradlew clean build -x test
+        ./gradlew test --tests *runners* aggregate -i
 
     - name: Recoger Evidencias de Pruebas
       uses: actions/upload-artifact@v2
