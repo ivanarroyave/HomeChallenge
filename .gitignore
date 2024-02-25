@@ -31,10 +31,3 @@ apiTestAutomation/swaggerPetstore/target/
 apiTestAutomation/swaggerPetstore/out/
 apiTestAutomation/swaggerPetstore/history/
 apiTestAutomation/swaggerPetstore/build/
-
-*/.idea/
-*/.gradle/
-*/target/
-*/out/
-*/history/
-*/build/
