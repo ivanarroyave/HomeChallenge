@@ -44,10 +44,12 @@ jobs:
     - name: Ejecutar pruebas con Gradle
       run: |
         cd apiTestAutomation/swaggerPetstore
+        sudo chmod -R 777 $(pwd)
         ./gradlew clean build -x test
         ./gradlew test --tests *runners* aggregate -i
 
     - name: Recoger Evidencias de Pruebas
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: test-reports
