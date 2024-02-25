@@ -1,3 +1,5 @@
+import org.gradle.configurationcache.problems.PropertyTrace
+
 plugins {
     id ("java")
     id ("net.serenity-bdd.serenity-gradle-plugin") version "4.0.46"
@@ -11,9 +13,14 @@ repositories {
 }
 
 dependencies {
-    implementation(platform("org.junit:junit-bom:5.9.1"))
-    implementation("org.junit.jupiter:junit-jupiter")
     implementation("junit:junit:4.13.2")
+    implementation("org.junit.jupiter:junit-jupiter-api:5.10.2")
+    implementation("org.junit.jupiter:junit-jupiter-engine:5.10.2")
+    implementation("org.junit.platform:junit-platform-suite:5.10.2")
+    implementation("org.junit.platform:junit-platform-suite-api:1.10.2")
+    implementation("org.junit.platform:junit-platform-suite-engine:1.10.2")
+
+    implementation("io.cucumber:cucumber-junit-platform-engine:7.15.0")
 
     implementation("net.serenity-bdd:serenity-screenplay-rest:4.1.0")
     implementation("net.serenity-bdd:serenity-screenplay:4.1.0")
@@ -33,5 +40,10 @@ dependencies {
 }
 
 tasks.test {
-    maxParallelForks = Runtime.getRuntime().availableProcessors().div(2) ?: 1
+    useJUnitPlatform()
+    // Configuración para la ejecución paralela en Gradle
+//    maxParallelForks = Runtime.getRuntime().availableProcessors()
+
+    // Propiedad para indicar a Cucumber ejecutar en paralelo
+    systemProperty("cucumber.execution.parallel.enabled", "true")
 }

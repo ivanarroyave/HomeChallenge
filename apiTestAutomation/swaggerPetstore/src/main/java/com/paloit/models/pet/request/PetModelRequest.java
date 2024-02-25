@@ -11,7 +11,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class PetModelRequest {
-    private int id;
+    private String id;
     private String name;
     private Category category;
     private List<String> photoUrls;

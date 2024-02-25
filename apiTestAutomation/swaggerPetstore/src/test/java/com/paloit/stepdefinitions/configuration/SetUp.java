@@ -27,12 +27,6 @@ public class SetUp {
         setUpActorAndApi(actorName);
     }
 
-    public HashMap<String, Object> headers(){
-        HashMap<String, Object> headers = new HashMap<>();
-        headers.put("Content-Type", "application/json");
-        return headers;
-    }
-
     protected String fromLastResponseBy(Actor actor){
         return  new String(
                 LastResponse.received().answeredBy(actor).asByteArray(),

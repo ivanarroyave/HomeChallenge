@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="1" failures="0" name="Everything about your Pets." skipped="0" tests="9" time="37.74" timestamp="2024-02-24 06:33:34"><testcase name="Delete a pet"/><testcase name="Finds pets by existing status."/><testcase name="Update an existing pet by Id - Unexpected Id format"/><testcase name="Add a new pet to the store."/><testcase name="Update an existing pet by Id - Non-existing Id"/><testcase name="Finds pets by unexpected status."/><testcase name="Update an existing pet by Id"><error message="Lexing failed on line: 1, column: 1, while reading 'P', no possible valid JSON value or punctuation could be recognized." type="groovy.json.JsonException">Lexing failed on line: 1, column: 1, while reading 'P', no possible valid JSON value or punctuation could be recognized.</error><system-err>Lexing failed on line: 1, column: 1, while reading 'P', no possible valid JSON value or punctuation could be recognized.&#13;
+groovy.json.JsonLexer.nextToken(JsonLexer.java:86)&#13;
+io.restassured.internal.path.json.ConfigurableJsonSlurper.parse(ConfigurableJsonSlurper.groovy:97)&#13;
+io.restassured.internal.path.json.ConfigurableJsonSlurper.parseText(ConfigurableJsonSlurper.groovy:83)&#13;
+io.restassured.path.json.JsonPath.get(JsonPath.java:202)&#13;
+com.paloit.stepdefinitions.pet.UpdateAnExistingPetById.thePlatformWillTakenTheChange(UpdateAnExistingPetById.java:68)&#13;
+</system-err></testcase></testsuite>

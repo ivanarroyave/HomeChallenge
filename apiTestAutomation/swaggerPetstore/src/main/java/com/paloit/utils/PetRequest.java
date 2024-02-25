@@ -13,7 +13,7 @@ public class PetRequest {
     public static PetModelRequest petModelRequestObject() {
         Faker faker = new Faker();
         PetModelRequest petModelRequest = new PetModelRequest();
-        petModelRequest.setId(new Random().nextInt(10000000));
+        petModelRequest.setId(String.valueOf(new Random(1000000).nextInt()));
         petModelRequest.setName(faker.dog().name());
 
         Category category = new Category();
