@@ -21,7 +21,7 @@ jobs:
     - name: Ejecutar pruebas con Gradle
       run: |
         pwd
-        cd /apiTestAutomation/swaggerPetstore/
+        cd /apiTestAutomation/swaggerPetstore
         ./gradlew cleanTest test
 
     - name: Caché de dependencias de Gradle
