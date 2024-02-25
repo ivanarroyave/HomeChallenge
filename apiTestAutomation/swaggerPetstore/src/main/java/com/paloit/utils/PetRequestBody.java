@@ -9,12 +9,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class PetRequestBody {
     public static PetModelRequest defaultPetModelRequestObject() {
         Faker faker = new Faker();
+
         PetModelRequest petModelRequest = new PetModelRequest();
-        petModelRequest.setId(String.valueOf(new Random(1000000).nextInt()));
+        petModelRequest.setId(String.valueOf(ThreadLocalRandom.current().nextInt(1000000000)));
         petModelRequest.setName(faker.dog().name());
 
         Category category = new Category();

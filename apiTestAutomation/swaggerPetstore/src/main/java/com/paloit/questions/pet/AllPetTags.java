@@ -4,14 +4,15 @@ import com.paloit.models.pet.request.PetModelResponse;
 import com.paloit.questions.GetLastResponses;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
+import net.serenitybdd.screenplay.rest.questions.LastResponse;
 
 import java.util.List;
 
 public class AllPetTags implements Question<Boolean> {
-    private final String tag;
+    private final List<String> tags;
 
-    public AllPetTags(String tag) {
-        this.tag = tag;
+    public AllPetTags(List<String> tags) {
+        this.tags = tags;
     }
 
     public AllPetTags areListed() {
@@ -24,13 +25,13 @@ public class AllPetTags implements Question<Boolean> {
 
         List<PetModelResponse> filteredPets = petModelResponses.stream()
                 .filter(pet -> pet.getTags() != null && pet.getTags().stream()
-                        .anyMatch(tag1 -> tag.equals(tag1.getName())))
+                        .anyMatch(tag1 -> tags.contains(tag1.getName())))
                 .toList();
 
         return (petModelResponses.size() == filteredPets.size()) && !petModelResponses.isEmpty();
     }
 
-    public static AllPetTags as(String tag) {
-        return new AllPetTags(tag);
+    public static AllPetTags suchAs(List<String> tags) {
+        return new AllPetTags(tags);
     }
 }

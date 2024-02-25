@@ -12,6 +12,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.ensure.Ensure;
+import net.serenitybdd.screenplay.rest.questions.LastResponse;
 import net.serenitybdd.screenplay.rest.questions.ResponseConsequence;
 import org.apache.http.HttpStatus;
 
@@ -86,10 +87,17 @@ public class FindsPetsByStatus extends SetUp {
     @Then("he will see a list of pets related with the tag {string}")
     public void heWillSeeAListOfPetsRelatedWithTheTag(String tag) {
         theActorInTheSpotlight().should(
+                seeThatResponse(
+                        HTTP_STATUS_CODE_MESSAGE + HttpStatus.SC_OK,
+                        response -> response.statusCode(HttpStatus.SC_OK)
+                ),
                 seeThat(
                         "all results are related with the tag " + tag,
-                        AllPetTags.as(tag).areListed(),
+                        AllPetTags.suchAs(Collections.singletonList(tag)).areListed(),
                         is(true)
+                ).orComplainWith(
+                        DoNotMatch.class,
+                        String.format(VALIDATION_DO_NOT_MATCH, "The results aren't related with all tags: " + tag)
                 )
         );
     }
@@ -113,7 +121,7 @@ public class FindsPetsByStatus extends SetUp {
         );
 
         theActorInTheSpotlight().attemptsTo(
-                Ensure.that(AllPetTags.as(tag).areListed()).isFalse()
+                Ensure.that(AllPetTags.suchAs(Collections.singletonList(tag)).areListed()).isFalse()
                         .orElseThrow(
                                 new DoNotMatch(String.format(VALIDATION_DO_NOT_MATCH, "The tag \"" + tag + "\" already exists."))
                         )
@@ -129,6 +137,19 @@ public class FindsPetsByStatus extends SetUp {
 
     @Then("he will see a list of pets related only with existing tags")
     public void heWillSeeListOfPetsRelatedOnlyWithExistingTags() {
-
+        theActorInTheSpotlight().should(
+                seeThatResponse(
+                        HTTP_STATUS_CODE_MESSAGE + HttpStatus.SC_OK,
+                        response -> response.statusCode(HttpStatus.SC_OK)
+                ),
+                seeThat(
+                        "all results are related with the tags " + tags.toString(),
+                        AllPetTags.suchAs(tags).areListed(),
+                        is(true)
+                ).orComplainWith(
+                        DoNotMatch.class,
+                        String.format(VALIDATION_DO_NOT_MATCH, "The results aren't related with all tags: " + tags.toString())
+                )
+        );
     }
 }
