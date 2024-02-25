@@ -85,9 +85,7 @@ jobs:
 
     - name: Ejecutar pruebas con k6
       run: |
-        pwd
         cd apiPerformanceImplementation/swaggerPetstore/pet
-        pwd
         sudo chmod -R 777 $(pwd)
         k6 run findPetByStatus.js > findPetByStatusResult.txt
 
