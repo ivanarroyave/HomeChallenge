@@ -10,7 +10,7 @@ import java.util.List;
 @Getter
 @Setter
 public class PetModelResponse {
-    private String id;
+    private int id;
     private Category category;
     private String name;
     private List<String> photoUrls;

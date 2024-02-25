@@ -1,5 +1,6 @@
 package com.paloit.tasks.pet;
 
+import com.paloit.models.pet.request.PetModelRequest;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.rest.interactions.Post;
@@ -8,10 +9,18 @@ import java.util.Collections;
 
 import static com.paloit.utils.ContentType.APPLICATION_JSON;
 import static com.paloit.utils.Json.generateJson;
-import static com.paloit.utils.PetRequest.petModelRequestObject;
+import static com.paloit.utils.PetRequestBody.defaultPetModelRequestObject;
 import static com.paloit.utils.pet.PetResources.ADD_NEW_PET_TO_THE_STORE;
 
 public class AddNewPet implements Task {
+    private PetModelRequest petModelRequest;
+    private boolean isCustomRequestMode;
+
+    public AddNewPet withTheNextSpecification(PetModelRequest petModelRequest) {
+        this.petModelRequest = petModelRequest;
+        isCustomRequestMode = true;
+        return this;
+    }
 
     @Override
     public <T extends Actor> void performAs(T t) {
@@ -19,9 +28,13 @@ public class AddNewPet implements Task {
                 Post.to(ADD_NEW_PET_TO_THE_STORE.getValue())
                         .with(request -> request
                                 .headers(Collections.singletonMap(APPLICATION_JSON.getKey(), APPLICATION_JSON.getMimeType()))
-                                .body(generateJson(petModelRequestObject()))
+                                .body(defineBodyRequestMode())
                         )
         );
+    }
+
+    private String defineBodyRequestMode() {
+        return isCustomRequestMode ? generateJson(petModelRequest) : generateJson(defaultPetModelRequestObject());
     }
 
     public static AddNewPet ToTheStore() {

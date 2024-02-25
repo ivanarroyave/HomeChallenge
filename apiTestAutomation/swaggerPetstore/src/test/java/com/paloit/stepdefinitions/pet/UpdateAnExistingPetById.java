@@ -1,10 +1,8 @@
 package com.paloit.stepdefinitions.pet;
 
-import com.google.gson.Gson;
 import com.paloit.models.pet.request.PetModelRequest;
-import com.paloit.questions.pet.GetLastResponse;
+import com.paloit.questions.GetLastResponse;
 import com.paloit.stepdefinitions.configuration.SetUp;
-import com.paloit.tasks.ShowLasResponse;
 import com.paloit.tasks.pet.AddNewPet;
 import com.paloit.tasks.pet.DeleteThePet;
 import com.paloit.tasks.pet.UpdateAnExistingPet;
@@ -12,16 +10,12 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import net.serenitybdd.screenplay.rest.interactions.Delete;
-import net.serenitybdd.screenplay.rest.interactions.Post;
-import net.serenitybdd.screenplay.rest.interactions.Put;
 import net.serenitybdd.screenplay.rest.questions.ResponseConsequence;
 import org.apache.http.HttpStatus;
 
 import java.util.UUID;
 
 import static com.paloit.utils.LastResponseUtils.lastResponse;
-import static com.paloit.utils.PetRequest.petModelRequestObject;
 import static net.serenitybdd.screenplay.ExternalValueQuestion.valueOf;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;

@@ -1,7 +1,7 @@
 package com.paloit.stepdefinitions.pet;
 
 import com.paloit.models.pet.request.PetModelResponse;
-import com.paloit.questions.pet.GetLastResponse;
+import com.paloit.questions.GetLastResponse;
 import com.paloit.stepdefinitions.configuration.SetUp;
 import com.paloit.tasks.pet.DeleteThePet;
 import io.cucumber.java.Before;
@@ -22,10 +22,10 @@ public class DeletePet extends SetUp {
 
     @When("the employee execute the delete process")
     public void theEmployeeExecuteTheDeleteProcess() {
-        String petId = theActorInTheSpotlight().asksFor(GetLastResponse.asType(PetModelResponse.class)).getId();
+        int petId = theActorInTheSpotlight().asksFor(GetLastResponse.asType(PetModelResponse.class)).getId();
 
         theActorInTheSpotlight().attemptsTo(
-                DeleteThePet.withId(petId)
+                DeleteThePet.withId(String.valueOf(petId))
         );
     }
 
