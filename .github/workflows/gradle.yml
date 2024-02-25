@@ -19,8 +19,9 @@ jobs:
         distribution: 'adopt'
 
     - name: Ejecutar pruebas con Gradle
-      run: pwd
-      run: ./gradlew cleanTest test
+      run: |
+        pwd
+        ./gradlew cleanTest test
 
     - name: Caché de dependencias de Gradle
       uses: actions/cache@v3
