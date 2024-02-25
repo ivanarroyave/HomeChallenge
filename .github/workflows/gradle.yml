@@ -83,12 +83,13 @@ jobs:
         sudo apt-get update
         sudo apt-get install k6
 
-
     - name: Ejecutar pruebas con k6
       run: |
+        pwd
         cd apiPerformanceImplementation/swaggerPetstore/pet
+        pwd
         sudo chmod -R 777 $(pwd)
-        k6 run findPetByStatus.js > findPetByStatus.txt
+        k6 run findPetByStatus.js > findPetByStatusResult.txt
 
     - name: Recoger Evidencias de Pruebas
       if: always()
