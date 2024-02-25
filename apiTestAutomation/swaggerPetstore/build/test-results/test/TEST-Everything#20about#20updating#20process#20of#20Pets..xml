@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Everything about updating process of Pets." tests="3" skipped="0" failures="0" errors="0" timestamp="2024-02-25T08:29:27" hostname="DESKTOP-G32FPN8" time="0.621">
+  <properties/>
+  <testcase name="Update an existing pet by Id" classname="Everything about updating process of Pets." time="0.226"/>
+  <testcase name="Update an existing pet by Id - Non-existing Id" classname="Everything about updating process of Pets." time="0.185"/>
+  <testcase name="Update an existing pet by Id - Unexpected Id format" classname="Everything about updating process of Pets." time="0.21"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

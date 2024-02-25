@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Everything about deleting process of Pets." tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-25T08:29:26" hostname="DESKTOP-G32FPN8" time="0.41">
+  <properties/>
+  <testcase name="Delete a pet" classname="Everything about deleting process of Pets." time="0.41"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
