@@ -14,12 +14,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Configurar Java
-      uses: actions/setup-java@v2
-      with:
-        java-version: '17'
-        distribution: 'adopt'
-
     - name: Pull Docker Image
       run: |
         docker pull swaggerapi/petstore3:unstable
