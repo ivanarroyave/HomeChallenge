@@ -20,6 +20,8 @@ jobs:
 
     - name: Ejecutar pruebas con Gradle
       run: |
+        docker pull swaggerapi/petstore3:unstable
+        docker run --name swaggerapi-petstore3 -d -p 8080:8080 swaggerapi/petstore3:unstable
         pwd
         cd apiTestAutomation/swaggerPetstore
         pwd
