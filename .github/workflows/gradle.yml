@@ -29,7 +29,7 @@ jobs:
 
     - name: Esperar a que el servicio esté disponible
       run: |
-        wget --waitretry=5 --retry-connrefused -T 15 -O- http://localhost:8080/v2/swagger.json
+        wget --waitretry=5 --retry-connrefused -T 15 -O- http://localhost:8080/api/v3/openapi.json
 
     - name: Caché de dependencias de Gradle
       uses: actions/cache@v3
