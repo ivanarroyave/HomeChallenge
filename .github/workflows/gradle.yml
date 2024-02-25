@@ -56,3 +56,42 @@ jobs:
         name: test-reports
         path: |
           apiTestAutomation/swaggerPetstore/target/site/**
+  
+  performance-test-with-k6:
+    runs-on: ubuntu-latest
+    container: loadimpact/k6:latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Configurar Java
+      uses: actions/setup-java@v2
+      with:
+        java-version: '17'
+        distribution: 'adopt'
+
+    - name: Pull Docker Image
+      run: |
+        docker pull swaggerapi/petstore3:unstable
+
+    - name: Iniciar Contenedor Docker
+      run: |
+        docker run --name swaggerapi-petstore3 -d -p 8080:8080 swaggerapi/petstore3:unstable
+
+    - name: Esperar a que el servicio esté disponible
+      run: |
+        wget --waitretry=5 --retry-connrefused -T 15 -O- http://localhost:8080/api/v3/openapi.json
+    
+    - name: Ejecutar pruebas con k6
+      run: |
+        cd apiPerformanceImplementation/swaggerPetstore/pet
+        sudo chmod -R 777 $(pwd)
+        k6 run findPetByStatus.js > findPetByStatusResult.txt
+
+    - name: Recoger Evidencias de Pruebas
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: performance-test-with-k6-reports
+        path: |
+          apiPerformanceImplementation/swaggerPetstore/pet/findPetByStatusResult.txt
