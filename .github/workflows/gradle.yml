@@ -14,6 +14,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Configurar Java
+      uses: actions/setup-java@v2
+      with:
+        java-version: '17'
+        distribution: 'adopt'
+
     - name: Pull Docker Image
       run: |
         docker pull swaggerapi/petstore3:unstable
@@ -58,12 +64,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Configurar Java
-      uses: actions/setup-java@v2
-      with:
-        java-version: '17'
-        distribution: 'adopt'
-
     - name: Pull Docker Image
       run: |
         docker pull swaggerapi/petstore3:unstable
@@ -80,7 +80,7 @@ jobs:
       run: |
         cd apiPerformanceImplementation/swaggerPetstore/pet
         sudo chmod -R 777 $(pwd)
-        k6 run findPetByStatus.js > findPetByStatusResult.txt
+        k6 run findPetByStatus.js > findPetByStatus.txt
 
     - name: Recoger Evidencias de Pruebas
       if: always()
