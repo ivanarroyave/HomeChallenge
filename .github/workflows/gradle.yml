@@ -26,7 +26,8 @@ jobs:
         cd apiTestAutomation/swaggerPetstore
         pwd
         sudo chmod -R 777 $(pwd)
-        ./gradlew cleanTest test
+        ./gradlew clean build -x test
+        ./gradlew test --tests *runners* aggregate -i
 
     - name: Caché de dependencias de Gradle
       uses: actions/cache@v3
