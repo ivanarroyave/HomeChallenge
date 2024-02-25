@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Everything about searches in the store." tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-25T08:29:28" hostname="DESKTOP-G32FPN8" time="0.14">
-  <properties/>
-  <testcase name="Returns pet inventories by status." classname="Everything about searches in the store." time="0.14"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
