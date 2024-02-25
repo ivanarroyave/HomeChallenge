@@ -28,9 +28,8 @@ replay_pid*
 
 #Intellij
 */.idea/
-*/apiTestAutomation/swaggerPetstore/.idea/
-*/apiTestAutomation/swaggerPetstore/.gradle/
-*/apiTestAutomation/swaggerPetstore/target/
-*/apiTestAutomation/swaggerPetstore/out/
-*/apiTestAutomation/swaggerPetstore/history/
-*/apiTestAutomation/swaggerPetstore/build/
+*/.gradle/
+*/target/
+*/out/
+*/history/
+*/build/
