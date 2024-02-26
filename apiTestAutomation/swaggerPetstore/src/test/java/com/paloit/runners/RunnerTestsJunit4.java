@@ -1,4 +1,4 @@
-package com.paloit.runners.store;
+package com.paloit.runners;
 
 
 import io.cucumber.junit.CucumberOptions;
@@ -8,8 +8,8 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberSerenityRunner.class)
 @CucumberOptions(
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        features = {"src/test/resources/features/store"},
-        glue = {"com.paloit.stepdefinitions.store"}
+        features = {"src/test/resources/features"},
+        glue = {"com.paloit.stepdefinitions"}
 )
-public class StoreFeatureParallelExecutionLevel {
+public class RunnerTestsJunit4 {
 }

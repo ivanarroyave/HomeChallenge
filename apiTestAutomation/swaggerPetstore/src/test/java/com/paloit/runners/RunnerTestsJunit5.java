@@ -12,5 +12,5 @@ import static io.cucumber.junit.platform.engine.Constants.PLUGIN_PROPERTY_NAME;
 @SelectClasspathResource("/features")
 @ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "io.cucumber.core.plugin.SerenityReporterParallel,pretty")
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.paloit.stepdefinitions")
-public class GeneralScenariosParallelExecutionLevel {
+public class RunnerTestsJunit5 {
 }
