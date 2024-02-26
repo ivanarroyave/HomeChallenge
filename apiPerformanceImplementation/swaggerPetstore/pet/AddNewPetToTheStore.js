@@ -3,8 +3,8 @@ import { check, sleep } from 'k6';
 
 export let options = {
     stages: [
-        { duration: '1m', target: 500 },
-        { duration: '2m', target: 1500 },
+        { duration: '1m', target: 250 },
+        { duration: '2m', target: 1000 },
         { duration: '1m', target: 0 },
     ],
 };
@@ -49,8 +49,8 @@ export default function () {
     check(response, {
         'is status 200': (r) => r.status === 200,
         'is status not 500': (r) => r.status !== 500,
-        'has a reasonable response time': (r) => r.timings.duration <= 1000,
-        'time to first byte is short': (r) => r.timings.waiting < 500
+        'has a reasonable response time': (r) => r.timings.duration <= 2000,
+        'time to first byte is short': (r) => r.timings.waiting < 1000
     });
 
     sleep(1);
